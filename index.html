@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MealBridge | Community Meal Distribution</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="MealBridge home">
+        <span class="brand-mark">✳</span>
+        <span>meal<span class="brand-light">bridge</span><small>COMMUNITY CARE</small></span>
+      </a>
+      <nav class="nav">
+        <a class="nav-link active" href="#overview"><span>▦</span> Overview</a>
+        <a class="nav-link" href="#centers"><span>⌖</span> Distribution centers</a>
+        <a class="nav-link" href="#volunteers"><span>♙</span> Volunteers</a>
+        <a class="nav-link" href="#supplies"><span>▤</span> Food supplies</a>
+        <a class="nav-link" href="#schedule"><span>◷</span> Distribution schedule</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon">♡</div><strong>Every meal matters.</strong>
+          <p>Small acts of care make a big difference in our community.</p>
+        </div>
+        <div class="profile">
+          <div class="avatar">MB</div>
+          <div><strong>MealBridge Admin</strong><small>Community coordinator</small></div><span class="dots">•••</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div>
+        <div class="top-actions"><span class="today" id="todayLabel"></span><button class="icon-button"
+            title="Notifications" aria-label="Notifications">♧<i></i></button>
+          <div class="top-avatar">MB</div>
+        </div>
+      </header>
+
+      <section class="page-content" id="overview">
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="live-dot"></span> COMMUNITY OPERATIONS</div>
+            <h1>Good morning, team <span>✳</span></h1>
+            <p class="subheading">Here’s what’s happening with your meal distribution today.</p>
+          </div>
+          <button class="primary-button" id="openModal"><span>＋</span> Add distribution center</button>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card">
+            <div class="stat-top"><span>Meals prepared</span><span class="stat-icon mint">♨</span></div>
+            <div class="stat-value" id="mealsPrepared">1,240</div>
+            <div class="stat-foot"><span class="trend">↗ 12%</span> <span>vs. yesterday</span></div>
+            <div class="mini-bars" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Meals distributed</span><span class="stat-icon peach">♡</span></div>
+            <div class="stat-value" id="mealsDistributed">860</div>
+            <div class="stat-foot"><span class="trend">↗ 8%</span> <span>vs. yesterday</span></div>
+            <div class="progress-track"><span id="distributionProgress" style="width:69%"></span></div>
+            <div class="progress-caption"><span>Daily target</span><strong id="progressText">69%</strong></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Active volunteers</span><span class="stat-icon lilac">♙</span></div>
+            <div class="stat-value" id="volunteerCount">4</div>
+            <div class="stat-foot"><span class="trend">↗ 4 new</span> <span>this week</span></div>
+            <div class="avatar-stack"><span>AK</span><span>RS</span><span>MP</span><span>＋1</span></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span>Active centers</span><span class="stat-icon blue">⌖</span></div>
+            <div class="stat-value" id="centerCount">6</div>
+            <div class="stat-foot"><span class="status-pill">● All operational</span></div>
+            <div class="stat-note">Across 3 local areas</div>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel centers-panel" id="centers">
+            <div class="panel-heading">
+              <div>
+                <h2>Distribution centers</h2>
+                <p>Manage meal needs and delivery status</p>
+              </div><button class="text-button" id="viewAllCenters">View all <span>→</span></button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>CENTER</th>
+                    <th>MEALS NEEDED</th>
+                    <th>SUPPLY STATUS</th>
+                    <th>VOLUNTEER</th>
+                    <th>STATUS</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="centersBody"></tbody>
+              </table>
+            </div>
+            <div class="empty-state hidden" id="emptyCenters">No centers yet. Add your first distribution center.</div>
+          </section>
+
+          <section class="panel needs-panel" id="supplies">
+            <div class="panel-heading">
+              <div>
+                <h2>Supply overview</h2>
+                <p>Today's food availability</p>
+              </div><span class="small-date">TODAY</span>
+            </div>
+            <div class="supply-total">
+              <div><span class="muted">Meals available</span><strong id="availableMeals">1,540
+                  <small>meals</small></strong></div><span class="supply-symbol">▤</span>
+            </div>
+            <div class="supply-line">
+              <div><span><i class="legend-dot green"></i> Ready to distribute</span><strong
+                  id="readyMeals">1,080</strong></div>
+              <div class="bar"><span class="bar-green" id="readyBar" style="width:70%"></span></div>
+            </div>
+            <div class="supply-line">
+              <div><span><i class="legend-dot orange"></i> Needs restocking</span><strong id="restockMeals">460</strong>
+              </div>
+              <div class="bar"><span class="bar-orange" id="restockBar" style="width:30%"></span></div>
+            </div>
+            <button class="secondary-button full-width" id="updateSupply">＋ Update food supplies</button>
+            <div class="supply-tip"><span>✦</span>
+              <p><strong>Quick reminder</strong><br>Check low-stock centers before the next distribution round.</p>
+            </div>
+          </section>
+        </div>
+
+        <div class="bottom-grid">
+          <section class="panel schedule-panel" id="schedule">
+            <div class="panel-heading">
+              <div>
+                <h2>Today's distribution schedule</h2>
+                <p>Keep every delivery on track</p>
+              </div><button class="text-button" id="addSchedule">＋ Add task</button>
+            </div>
+            <div class="schedule-list" id="scheduleList"></div>
+          </section>
+          <section class="panel volunteer-panel" id="volunteers">
+            <div class="panel-heading">
+              <div>
+                <h2>Volunteer assignments</h2>
+                <p>People powering the mission</p>
+              </div><span class="volunteer-badge">4 active</span>
+            </div>
+            <div class="volunteer-list">
+              <div class="volunteer-row">
+                <div class="person-avatar green-bg">AK</div>
+                <div class="person-info"><strong>Arjun Kumar</strong><small>Central Community Kitchen</small></div><span
+                  class="assignment done">Completed</span>
+              </div>
+              <div class="volunteer-row">
+                <div class="person-avatar pink-bg">RS</div>
+                <div class="person-info"><strong>Riya Sharma</strong><small>Sunrise Shelter</small></div><span
+                  class="assignment ongoing">In progress</span>
+              </div>
+              <div class="volunteer-row">
+                <div class="person-avatar blue-bg">MP</div>
+                <div class="person-info"><strong>Mohit Patel</strong><small>Green Park Center</small></div><span
+                  class="assignment upcoming">Upcoming</span>
+              </div>
+              <div class="volunteer-row">
+                <div class="person-avatar yellow-bg">NS</div>
+                <div class="person-info"><strong>Neha Singh</strong><small>Riverside Food Point</small></div><span
+                  class="assignment upcoming">Upcoming</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="centerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <form class="modal" id="centerForm">
+      <div class="modal-heading">
+        <div>
+          <div class="eyebrow">CENTER MANAGEMENT</div>
+          <h2 id="modalTitle">Add distribution center</h2>
+          <p>Enter the details for a new meal distribution location.</p>
+        </div><button type="button" class="close-button" id="closeModal" aria-label="Close">×</button>
+      </div>
+      <label>Center name<input name="name" required maxlength="70" placeholder="e.g. Riverside Food Point"></label>
+      <label>Location<input name="location" required maxlength="80" placeholder="e.g. Green Park, Sector 4"></label>
+      <div class="form-row"><label>Meals needed<input name="needed" type="number" min="1" max="100000" required
+            placeholder="250"></label><label>Meals in stock<input name="stock" type="number" min="0" max="100000"
+            required placeholder="180"></label></div>
+      <label>Assign volunteer<select name="volunteer">
+          <option value="Unassigned">Unassigned</option>
+          <option>Arjun Kumar</option>
+          <option>Riya Sharma</option>
+          <option>Mohit Patel</option>
+          <option>Neha Singh</option>
+        </select></label>
+      <div class="modal-actions"><button type="button" class="secondary-button" id="cancelModal">Cancel</button><button
+          class="primary-button" type="submit">Save center <span>→</span></button></div>
+    </form>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>

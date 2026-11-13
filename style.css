@@ -1,0 +1,675 @@
+/* Basic CSS - made for a first semester project */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+.app-shell {
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    color: green;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.brand-mark {
+    color: white;
+    background-color: green;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.brand-light {
+    color: #555;
+    font-weight: normal;
+}
+
+.brand small {
+    display: block;
+    margin-left: 38px;
+    font-size: 10px;
+}
+
+.workspace-label {
+    margin-top: 15px;
+    color: #777;
+    font-size: 12px;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 8px;
+    margin: 3px;
+    color: #333;
+    text-decoration: none;
+    background-color: #eeeeee;
+    border-radius: 3px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #d8ead8;
+    color: green;
+}
+
+.sidebar-bottom {
+    display: none;
+}
+
+.main {
+    width: 95%;
+    max-width: 1200px;
+    margin: 15px auto;
+}
+
+.topbar {
+    background-color: white;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumb {
+    color: #555;
+}
+
+.breadcrumb strong {
+    color: green;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.today {
+    color: #555;
+    font-size: 12px;
+}
+
+.icon-button,
+.mobile-menu {
+    padding: 6px 10px;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.top-avatar {
+    background-color: #d8ead8;
+    color: green;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.page-content {
+    padding: 15px 0;
+}
+
+.welcome-row {
+    background: white;
+    border: 1px solid #dddddd;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.eyebrow {
+    color: green;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+h1 span {
+    color: green;
+}
+
+.subheading {
+    color: #666;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 9px 12px;
+    border: 1px solid green;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: green;
+    color: white;
+}
+
+.secondary-button {
+    background-color: white;
+    color: green;
+}
+
+.primary-button:hover {
+    background-color: #006400;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.stat-card,
+.panel {
+    background-color: white;
+    border: 1px solid #dddddd;
+    padding: 14px;
+    border-radius: 3px;
+}
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+}
+
+.stat-icon {
+    color: green;
+}
+
+.stat-value {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.stat-foot,
+.stat-note {
+    font-size: 12px;
+    color: #777;
+}
+
+.trend {
+    color: green;
+}
+
+.progress-track,
+.bar {
+    height: 8px;
+    background-color: #dddddd;
+    margin-top: 10px;
+}
+
+.progress-track span,
+.bar span {
+    display: block;
+    height: 8px;
+    background-color: green;
+}
+
+.progress-caption {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.avatar-stack {
+    margin-top: 10px;
+}
+
+.avatar-stack span {
+    display: inline-block;
+    background-color: #e2eee2;
+    padding: 5px;
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+.status-pill {
+    color: green;
+    font-size: 11px;
+}
+
+.content-grid,
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.panel-heading h2 {
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.panel-heading p {
+    color: #777;
+    font-size: 12px;
+    margin: 0;
+}
+
+.text-button {
+    background: none;
+    border: none;
+    color: green;
+    cursor: pointer;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: 9px;
+    font-size: 12px;
+}
+
+th {
+    background-color: #eeeeee;
+}
+
+.center-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.center-symbol {
+    color: green;
+    font-size: 18px;
+}
+
+.center-name,
+.meal-number {
+    font-weight: bold;
+}
+
+.center-location {
+    color: #777;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.stock-tag,
+.status-tag,
+.task-status,
+.assignment,
+.volunteer-badge {
+    padding: 4px 6px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.stock-ok,
+.status-done,
+.task-status.completed,
+.assignment.done {
+    background-color: #e1f0e1;
+    color: green;
+}
+
+.stock-low,
+.status-pending,
+.task-status.waiting,
+.assignment.upcoming {
+    background-color: #fff2d8;
+    color: #805500;
+}
+
+.status-progress,
+.task-status.progress,
+.assignment.ongoing {
+    background-color: #e5eef8;
+    color: #245080;
+}
+
+.status-tag,
+.row-menu {
+    cursor: pointer;
+}
+
+.row-menu {
+    border: none;
+    background: white;
+}
+
+.small-date {
+    font-size: 11px;
+    color: green;
+}
+
+.supply-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.muted {
+    display: block;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.supply-total strong {
+    font-size: 24px;
+}
+
+.supply-total strong small {
+    font-size: 11px;
+}
+
+.supply-symbol {
+    font-size: 25px;
+    color: green;
+}
+
+.supply-line {
+    margin-top: 15px;
+}
+
+.supply-line > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.legend-dot {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: green;
+}
+
+.legend-dot.orange,
+.bar-orange {
+    background-color: orange !important;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.supply-tip {
+    background-color: #fff8df;
+    padding: 10px;
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.supply-tip p {
+    margin: 5px 0;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.schedule-time {
+    width: 70px;
+    color: green;
+    font-size: 11px;
+}
+
+.timeline {
+    display: none;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.task-sub {
+    color: #777;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.volunteer-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.person-avatar {
+    padding: 9px;
+    border-radius: 50%;
+    background-color: #e1f0e1;
+    color: green;
+}
+
+.pink-bg,
+.blue-bg,
+.yellow-bg {
+    background-color: #eeeeee;
+    color: #333;
+}
+
+.person-info {
+    flex: 1;
+}
+
+.person-info strong,
+.person-info small {
+    display: block;
+}
+
+.person-info small {
+    color: #777;
+    margin-top: 4px;
+    font-size: 11px;
+}
+
+footer {
+    padding: 15px 0;
+    color: #777;
+    font-size: 12px;
+}
+
+footer > span {
+    color: red;
+}
+
+.footer-right {
+    float: right;
+}
+
+.empty-state {
+    padding: 15px;
+    text-align: center;
+    color: #777;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Add center form */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.modal {
+    background-color: white;
+    width: 95%;
+    max-width: 450px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+.modal-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-heading h2 {
+    margin-bottom: 5px;
+}
+
+.modal-heading p {
+    color: #777;
+    font-size: 12px;
+}
+
+.close-button {
+    height: 28px;
+    cursor: pointer;
+}
+
+.modal label {
+    display: block;
+    margin: 12px 0;
+    font-size: 12px;
+}
+
+.modal input,
+.modal select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    display: none;
+}
+
+.toast.show {
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .main {
+        width: 94%;
+    }
+
+    .nav-link {
+        margin: 2px;
+        font-size: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .top-actions .today {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .welcome-row .primary-button {
+        margin-top: 10px;
+    }
+
+    .schedule-item {
+        flex-wrap: wrap;
+    }
+
+    .footer-right {
+        float: none;
+        display: block;
+        margin-top: 8px;
+    }
+}
