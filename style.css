@@ -244,6 +244,14 @@ h1 span {
     margin-top: 5px;
 }
 
+.hidden {
+    display: none !important;
+}
+
+aside {
+    transition: all 0.3s ease;
+}
+
 .avatar-stack {
     margin-top: 10px;
 }
