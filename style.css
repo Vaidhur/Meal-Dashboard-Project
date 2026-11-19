@@ -626,29 +626,155 @@ footer > span {
     display: block;
 }
 
-@media screen and (max-width: 800px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .content-grid,
-    .bottom-grid {
-        grid-template-columns: 1fr;
-    }
+/* Responsive layout improvements */
+* {
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 550px) {
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+    font: inherit;
+}
+
+.app-shell {
+    min-height: 100vh;
+}
+
+.main {
+    width: min(95%, 1200px);
+}
+
+.stats-grid,
+.content-grid,
+.bottom-grid {
+    min-width: 0;
+}
+
+.stat-card,
+.panel,
+.welcome-row,
+.topbar {
+    min-width: 0;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    min-width: 560px;
+}
+
+.modal-backdrop {
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.modal {
+    max-height: calc(100vh - 30px);
+    overflow-y: auto;
+}
+
+/* Tablets and small laptops */
+@media screen and (max-width: 900px) {
     .main {
         width: 94%;
     }
 
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content-grid,
+    .bottom-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 600px) {
+    .sidebar {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding: 12px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .brand small {
+        margin-left: 0;
+    }
+
+    .workspace-label {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+    }
+
     .nav-link {
-        margin: 2px;
+        margin: 3px;
+        padding: 8px 9px;
         font-size: 12px;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
+    .main {
+        width: 94%;
+        margin: 10px auto;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+    }
+
+    .top-actions {
+        width: 100%;
+        justify-content: space-between;
+        gap: 7px;
     }
 
     .top-actions .today {
@@ -659,17 +785,129 @@ footer > span {
         display: block;
     }
 
-    .welcome-row .primary-button {
+    .page-content {
+        padding: 10px 0;
+    }
+
+    .welcome-row {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .subheading {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .welcome-row .primary-button,
+    .welcome-row .secondary-button {
         margin-top: 10px;
     }
 
-    .schedule-item {
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .stat-card,
+    .panel {
+        padding: 11px;
+    }
+
+    .stat-value {
+        font-size: 21px;
+    }
+
+    .stat-top {
+        gap: 6px;
+        font-size: 12px;
+    }
+
+    .panel-heading {
+        align-items: flex-start;
         flex-wrap: wrap;
+    }
+
+    .panel-heading h2 {
+        font-size: 16px;
+    }
+
+    .schedule-item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .schedule-time {
+        width: 60px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-backdrop {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .modal {
+        width: 100%;
+        padding: 15px;
+        margin: auto 0;
+    }
+
+    .modal-actions {
+        flex-wrap: wrap;
+    }
+
+    .modal-actions button {
+        flex: 1;
+    }
+
+    footer {
+        line-height: 1.6;
     }
 
     .footer-right {
         float: none;
         display: block;
-        margin-top: 8px;
+        margin-top: 6px;
+    }
+
+    .toast {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        text-align: center;
+    }
+}
+
+/* Very small phones */
+@media screen and (max-width: 380px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-link {
+        font-size: 11px;
+        padding: 7px;
+    }
+
+    .top-avatar {
+        padding: 6px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        padding: 8px 10px;
+        font-size: 13px;
     }
 }
