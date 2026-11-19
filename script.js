@@ -495,3 +495,9 @@ document.querySelectorAll(".nav-link").forEach(function (link) {
         getElement("sidebar").classList.remove("open");
     });
 });
+
+function toggleSidebar() {
+    const sidebar = document.querySelector("aside");
+
+    sidebar.classList.toggle("hidden");
+}
